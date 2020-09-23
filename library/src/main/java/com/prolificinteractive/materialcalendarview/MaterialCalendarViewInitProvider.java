@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 /**
@@ -39,37 +37,37 @@ public final class MaterialCalendarViewInitProvider extends ContentProvider {
     super.attachInfo(context, providerInfo);
   }
 
-  @Nullable @Override public Cursor query(
-      @NonNull final Uri uri,
-      @Nullable final String[] projection,
-      @Nullable final String selection,
-      @Nullable final String[] selectionArgs,
-      @Nullable final String sortOrder) {
+   @Override public Cursor query(
+       final Uri uri,
+       final String[] projection,
+       final String selection,
+       final String[] selectionArgs,
+       final String sortOrder) {
     return null;
   }
 
-  @Nullable @Override public String getType(@NonNull final Uri uri) {
+   @Override public String getType( final Uri uri) {
     return null;
   }
 
-  @Nullable @Override public Uri insert(
-      @NonNull final Uri uri,
-      @Nullable final ContentValues values) {
+   @Override public Uri insert(
+       final Uri uri,
+       final ContentValues values) {
     return null;
   }
 
   @Override public int delete(
-      @NonNull final Uri uri,
-      @Nullable final String selection,
-      @Nullable final String[] selectionArgs) {
+       final Uri uri,
+       final String selection,
+       final String[] selectionArgs) {
     return 0;
   }
 
   @Override public int update(
-      @NonNull final Uri uri,
-      @Nullable final ContentValues values,
-      @Nullable final String selection,
-      @Nullable final String[] selectionArgs) {
+       final Uri uri,
+       final ContentValues values,
+       final String selection,
+       final String[] selectionArgs) {
     return 0;
   }
 }

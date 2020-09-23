@@ -1,6 +1,5 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
 import org.threeten.bp.Period;
 
 /**
@@ -41,7 +40,7 @@ class MonthPagerAdapter extends CalendarPagerAdapter<MonthView> {
      */
     private final int count;
 
-    public Monthly(@NonNull final CalendarDay min, @NonNull final CalendarDay max) {
+    public Monthly( final CalendarDay min,  final CalendarDay max) {
       this.min = CalendarDay.from(min.getYear(), min.getMonth(), 1);
       this.count = indexOf(max) + 1;
     }

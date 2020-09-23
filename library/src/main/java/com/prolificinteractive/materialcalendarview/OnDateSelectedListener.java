@@ -1,6 +1,5 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
 
 /**
  * The callback used to indicate a date has been selected or deselected
@@ -16,7 +15,7 @@ public interface OnDateSelectedListener {
    * @param selected true if the day is now selected, false otherwise
    */
   void onDateSelected(
-      @NonNull MaterialCalendarView widget,
-      @NonNull CalendarDay date,
+       MaterialCalendarView widget,
+       CalendarDay date,
       boolean selected);
 }

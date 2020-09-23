@@ -1,7 +1,6 @@
 package com.prolificinteractive.materialcalendarview;
 
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +40,7 @@ abstract class CalendarPagerView extends ViewGroup
   private final Collection<DayView> dayViews = new ArrayList<>();
 
   public CalendarPagerView(
-      @NonNull MaterialCalendarView view,
+       MaterialCalendarView view,
       CalendarDay firstViewDay,
       DayOfWeek firstDayOfWeek,
       boolean showWeekDays) {
@@ -339,13 +338,13 @@ abstract class CalendarPagerView extends ViewGroup
   }
 
   @Override
-  public void onInitializeAccessibilityEvent(@NonNull AccessibilityEvent event) {
+  public void onInitializeAccessibilityEvent( AccessibilityEvent event) {
     super.onInitializeAccessibilityEvent(event);
     event.setClassName(CalendarPagerView.class.getName());
   }
 
   @Override
-  public void onInitializeAccessibilityNodeInfo(@NonNull AccessibilityNodeInfo info) {
+  public void onInitializeAccessibilityNodeInfo( AccessibilityNodeInfo info) {
     super.onInitializeAccessibilityNodeInfo(info);
     info.setClassName(CalendarPagerView.class.getName());
   }

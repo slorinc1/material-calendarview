@@ -1,7 +1,5 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
-
 /**
  * The callback used to indicate a date has been long clicked.
  */
@@ -14,5 +12,5 @@ public interface OnDateLongClickListener {
    * @param widget the view associated with this listener
    * @param date the date that was long clicked.
    */
-  void onDateLongClick(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date);
+  void onDateLongClick( MaterialCalendarView widget,  CalendarDay date);
 }

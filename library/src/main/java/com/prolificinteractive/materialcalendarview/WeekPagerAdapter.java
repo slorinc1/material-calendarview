@@ -1,6 +1,5 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
 import org.threeten.bp.DayOfWeek;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.temporal.ChronoUnit;
@@ -51,8 +50,8 @@ public class WeekPagerAdapter extends CalendarPagerAdapter<WeekView> {
     private final DayOfWeek firstDayOfWeek;
 
     public Weekly(
-        @NonNull final CalendarDay min,
-        @NonNull final CalendarDay max,
+         final CalendarDay min,
+         final CalendarDay max,
         final DayOfWeek firstDayOfWeek) {
       this.firstDayOfWeek = firstDayOfWeek;
       this.min = getFirstDayOfWeek(min);
@@ -77,7 +76,7 @@ public class WeekPagerAdapter extends CalendarPagerAdapter<WeekView> {
      * Getting the first day of a week for a specific date based on a specific week day as first
      * day.
      */
-    private CalendarDay getFirstDayOfWeek(@NonNull final CalendarDay day) {
+    private CalendarDay getFirstDayOfWeek( final CalendarDay day) {
       final LocalDate temp = day.getDate().with(WeekFields.of(firstDayOfWeek, 1).dayOfWeek(), 1L);
       return CalendarDay.from(temp);
     }

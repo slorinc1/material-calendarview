@@ -1,6 +1,5 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
 import java.util.List;
 
 /**
@@ -15,5 +14,5 @@ public interface OnRangeSelectedListener {
    * @param widget the view associated with this listener
    * @param dates the dates in the range, in ascending order
    */
-  void onRangeSelected(@NonNull MaterialCalendarView widget, @NonNull List<CalendarDay> dates);
+  void onRangeSelected( MaterialCalendarView widget,  List<CalendarDay> dates);
 }

@@ -1,10 +1,10 @@
 package com.prolificinteractive.materialcalendarview;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.viewpager.widget.PagerAdapter;
+
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView.ShowOtherDates;
 import com.prolificinteractive.materialcalendarview.format.DayFormatter;
 import com.prolificinteractive.materialcalendarview.format.TitleFormatter;
@@ -25,7 +25,7 @@ abstract class CalendarPagerAdapter<V extends CalendarPagerView> extends PagerAd
   protected final MaterialCalendarView mcv;
   private final CalendarDay today;
 
-  @NonNull private TitleFormatter titleFormatter = TitleFormatter.DEFAULT;
+   private TitleFormatter titleFormatter = TitleFormatter.DEFAULT;
   private Integer color = null;
   private Integer dateTextAppearance = null;
   private Integer weekDayTextAppearance = null;
@@ -120,7 +120,7 @@ abstract class CalendarPagerAdapter<V extends CalendarPagerView> extends PagerAd
   protected abstract DateRangeIndex createRangeIndex(CalendarDay min, CalendarDay max);
 
   @Override
-  public int getItemPosition(@NonNull Object object) {
+  public int getItemPosition( Object object) {
     if (!(isInstanceOfView(object))) {
       return POSITION_NONE;
     }
@@ -136,9 +136,8 @@ abstract class CalendarPagerAdapter<V extends CalendarPagerView> extends PagerAd
     return index;
   }
 
-  @NonNull
   @Override
-  public Object instantiateItem(@NonNull ViewGroup container, int position) {
+  public Object instantiateItem( ViewGroup container, int position) {
     V pagerView = createView(position);
     pagerView.setContentDescription(mcv.getCalendarContentDescription());
     pagerView.setAlpha(0);
@@ -185,18 +184,18 @@ abstract class CalendarPagerAdapter<V extends CalendarPagerView> extends PagerAd
   }
 
   @Override
-  public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+  public void destroyItem( ViewGroup container, int position,  Object object) {
     V pagerView = (V) object;
     currentViews.remove(pagerView);
     container.removeView(pagerView);
   }
 
   @Override
-  public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+  public boolean isViewFromObject( View view,  Object object) {
     return view == object;
   }
 
-  public void setTitleFormatter(@Nullable TitleFormatter titleFormatter) {
+  public void setTitleFormatter( TitleFormatter titleFormatter) {
     this.titleFormatter = titleFormatter == null ? TitleFormatter.DEFAULT : titleFormatter;
   }
 
@@ -363,7 +362,7 @@ abstract class CalendarPagerAdapter<V extends CalendarPagerView> extends PagerAd
     return rangeIndex.getItem(position);
   }
 
-  @NonNull
+
   public List<CalendarDay> getSelectedDates() {
     return Collections.unmodifiableList(selectedDates);
   }

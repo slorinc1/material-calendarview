@@ -3,9 +3,10 @@ package com.prolificinteractive.materialcalendarview;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatTextView;
 import android.view.Gravity;
+
+import androidx.appcompat.widget.AppCompatTextView;
+
 import com.prolificinteractive.materialcalendarview.format.WeekDayFormatter;
 import org.threeten.bp.DayOfWeek;
 
@@ -29,7 +30,7 @@ import org.threeten.bp.DayOfWeek;
     setDayOfWeek(dayOfWeek);
   }
 
-  public void setWeekDayFormatter(@Nullable final WeekDayFormatter formatter) {
+  public void setWeekDayFormatter(final WeekDayFormatter formatter) {
     this.formatter = formatter == null ? WeekDayFormatter.DEFAULT : formatter;
     setDayOfWeek(dayOfWeek);
   }

@@ -1,7 +1,6 @@
 package com.prolificinteractive.materialcalendarview;
 
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class DayViewFacade {
    *
    * @param drawable Drawable to draw behind everything
    */
-  public void setBackgroundDrawable(@NonNull Drawable drawable) {
+  public void setBackgroundDrawable( Drawable drawable) {
     if (drawable == null) {
       throw new IllegalArgumentException("Cannot be null");
     }
@@ -41,7 +40,7 @@ public class DayViewFacade {
    *
    * @param drawable the drawable for selection
    */
-  public void setSelectionDrawable(@NonNull Drawable drawable) {
+  public void setSelectionDrawable( Drawable drawable) {
     if (drawable == null) {
       throw new IllegalArgumentException("Cannot be null");
     }
@@ -54,7 +53,7 @@ public class DayViewFacade {
    *
    * @param span text span instance
    */
-  public void addSpan(@NonNull Object span) {
+  public void addSpan( Object span) {
     if (spans != null) {
       this.spans.add(new Span(span));
       isDecorated = true;

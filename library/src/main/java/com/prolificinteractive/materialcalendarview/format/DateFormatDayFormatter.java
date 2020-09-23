@@ -1,6 +1,5 @@
 package com.prolificinteractive.materialcalendarview.format;
 
-import android.support.annotation.NonNull;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import java.text.DateFormat;
 import java.util.Locale;
@@ -25,14 +24,15 @@ public class DateFormatDayFormatter implements DayFormatter {
    *
    * @param format the format to use
    */
-  public DateFormatDayFormatter(@NonNull final DateTimeFormatter format) {
+  public DateFormatDayFormatter( final DateTimeFormatter format) {
     this.dateFormat = format;
   }
 
   /**
    * {@inheritDoc}
    */
-  @Override @NonNull public String format(@NonNull final CalendarDay day) {
+  @Override
+  public String format( final CalendarDay day) {
     return dateFormat.format(day.getDate());
   }
 }

@@ -12,13 +12,15 @@ import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.graphics.drawable.shapes.RectShape;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatCheckedTextView;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.view.Gravity;
 import android.view.View;
+
+import androidx.appcompat.widget.AppCompatCheckedTextView;
+
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView.ShowOtherDates;
 import com.prolificinteractive.materialcalendarview.format.DayFormatter;
 import java.util.List;
@@ -102,12 +104,10 @@ import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.
     setContentDescription(getContentDescriptionLabel());
   }
 
-  @NonNull
   public String getLabel() {
     return formatter.format(date);
   }
 
-  @NonNull
   public String getContentDescriptionLabel() {
     return contentDescriptionFormatter == null ? formatter.format(date)
                                                : contentDescriptionFormatter.format(date);
@@ -170,7 +170,7 @@ import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.
 
     if (!isInMonth && shouldBeVisible) {
       setTextColor(getTextColors().getColorForState(
-          new int[] { -android.R.attr.state_enabled }, Color.GRAY));
+          new int[] { -android.R.attr.state_enabled }, Color.TRANSPARENT));
     }
     setVisibility(shouldBeVisible ? View.VISIBLE : View.INVISIBLE);
   }
@@ -189,7 +189,7 @@ import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.
   private final Rect circleDrawableRect = new Rect();
 
   @Override
-  protected void onDraw(@NonNull Canvas canvas) {
+  protected void onDraw( Canvas canvas) {
     if (customBackground != null) {
       customBackground.setBounds(tempRect);
       customBackground.setState(getDrawableState());
@@ -223,7 +223,7 @@ import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.
       drawable.addState(new int[] { android.R.attr.state_pressed }, generateCircleDrawable(color));
     }
 
-    drawable.addState(new int[] { }, generateCircleDrawable(Color.TRANSPARENT));
+    drawable.addState(new int[] { }, generateRectangleDrawable(Color.TRANSPARENT));
 
     return drawable;
   }
@@ -231,6 +231,13 @@ import static com.prolificinteractive.materialcalendarview.MaterialCalendarView.
   private static Drawable generateCircleDrawable(final int color) {
     ShapeDrawable drawable = new ShapeDrawable(new OvalShape());
     drawable.getPaint().setColor(color);
+    return drawable;
+  }
+
+  private static Drawable generateRectangleDrawable(final int color) {
+    ShapeDrawable drawable = new ShapeDrawable(new RectShape());
+    drawable.getPaint().setColor(color);
+
     return drawable;
   }
 

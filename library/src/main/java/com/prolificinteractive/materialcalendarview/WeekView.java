@@ -1,7 +1,6 @@
 package com.prolificinteractive.materialcalendarview;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
 import java.util.Collection;
 import org.threeten.bp.DayOfWeek;
 import org.threeten.bp.LocalDate;
@@ -13,7 +12,7 @@ import org.threeten.bp.LocalDate;
 @SuppressLint("ViewConstructor") class WeekView extends CalendarPagerView {
 
   public WeekView(
-      @NonNull final MaterialCalendarView view,
+       final MaterialCalendarView view,
       final CalendarDay firstViewDay,
       final DayOfWeek firstDayOfWeek,
       final boolean showWeekDays) {
